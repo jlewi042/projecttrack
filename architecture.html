@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectTrack - Architecture</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .prose h1 {
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+    }
+    .prose h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose h3 {
+      color: #64748b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .prose table th {
+      background-color: #f1f5f9;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table td {
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .prose pre {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      overflow-x: auto;
+    }
+    .prose code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875em;
+    }
+    .prose a {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .prose a:hover {
+      color: #1e3a8a;
+    }
+    .prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose blockquote {
+      border-left: 4px solid #1e40af;
+      padding-left: 1rem;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+    .architecture-diagram {
+      font-family: monospace;
+      white-space: pre;
+      background-color: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <nav class="bg-slate-800 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold">ProjectTrack</span>
+          </a>
+        </div>
+        
+        <!-- Desktop menu -->
+        <div class="hidden md:flex md:items-center md:space-x-4">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+          <a href="requirements.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+          <a href="document-types.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+          <a href="workflow.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+          <a href="capabilities.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+          <a href="architecture.html" class="px-3 py-2 rounded-md text-sm font-medium bg-slate-900 text-white">Architecture</a>
+          <a href="implementation.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+          <a href="conclusion.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-700 focus:outline-none" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+        <a href="requirements.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+        <a href="document-types.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+        <a href="workflow.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+        <a href="capabilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+        <a href="architecture.html" class="block px-3 py-2 rounded-md text-base font-medium bg-slate-900 text-white">Architecture</a>
+        <a href="implementation.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+        <a href="conclusion.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="prose prose-slate lg:prose-lg max-w-none">
+      <h1>System Architecture</h1>
+
+<p>ProjectTrack's architecture follows a modular design with distinct components for document processing, analysis, content generation, and user interaction.</p>
+
+<h2>Architecture Overview</h2>
+
+<div class="architecture-diagram">
+┌───────────────────────────────────────────────────────────────────────┐
+│                      Microsoft Copilot Studio Agent                    │
+└───────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌───────────────────────────────────────────────────────────────────────┐
+│                           Core Agent Components                        │
+├───────────────┬───────────────┬───────────────┬───────────────────────┤
+│  Document     │  Analysis     │  Content      │  Quality              │
+│  Processing   │  Engine       │  Generation   │  Assurance            │
+└───────────────┴───────────────┴───────────────┴───────────────────────┘
+                                    │
+                                    ▼
+┌───────────────────────────────────────────────────────────────────────┐
+│                        Integration Layer                               │
+├───────────────┬───────────────┬───────────────┬───────────────────────┤
+│  Copilot      │  Document     │  User         │  External             │
+│  Studio API   │  Repository   │  Systems      │  Services             │
+└───────────────┴───────────────┴───────────────┴───────────────────────┘
+                                    │
+                                    ▼
+┌───────────────────────────────────────────────────────────────────────┐
+│                        Data Storage Layer                              │
+├───────────────┬───────────────┬───────────────┬───────────────────────┤
+│  Document     │  Knowledge    │  User         │  Generated            │
+│  Database     │  Base         │  Profiles     │  Content              │
+└───────────────┴───────────────┴───────────────┴───────────────────────┘
+</div>
+
+<h2>Core Agent Components</h2>
+
+<h3>1. Document Processing Component</h3>
+
+<ul>
+<li><strong>Format Converter</strong>: Handles various document formats (PDF, Word, Excel)</li>
+<li><strong>Structure Extractor</strong>: Identifies document structure and hierarchy</li>
+<li><strong>Metadata Processor</strong>: Extracts and normalizes document metadata</li>
+<li><strong>Classifier</strong>: Categorizes documents by type and content</li>
+</ul>
+
+<h3>2. Analysis Engine Component</h3>
+
+<ul>
+<li><strong>Semantic Analyzer</strong>: Extracts meaning and context from text</li>
+<li><strong>Relevancy Scorer</strong>: Evaluates relevance across multiple dimensions</li>
+<li><strong>Gap Analyzer</strong>: Identifies coverage gaps and suggests mitigations</li>
+<li><strong>Evidence Compiler</strong>: Collects supporting evidence for claims</li>
+</ul>
+
+<h3>3. Content Generation Component</h3>
+
+<ul>
+<li><strong>Table Generator</strong>: Creates structured comparison tables</li>
+<li><strong>Grid Builder</strong>: Develops relevancy assessment grids</li>
+<li><strong>Narrative Creator</strong>: Generates C-A-R story blocks</li>
+<li><strong>Document Assembler</strong>: Compiles complete proposal sections</li>
+</ul>
+
+<h3>4. Quality Assurance Component</h3>
+
+<ul>
+<li><strong>Compliance Checker</strong>: Verifies adherence to requirements</li>
+<li><strong>Style Analyzer</strong>: Ensures appropriate tone and style</li>
+<li><strong>Gap Reporter</strong>: Identifies information needs</li>
+<li><strong>Version Controller</strong>: Tracks content revisions</li>
+</ul>
+
+<h2>Integration Layer</h2>
+
+<h3>Microsoft Copilot Studio Integration</h3>
+
+<ul>
+<li><strong>Custom GPT Integration</strong>: Connects to specialized GPT models</li>
+<li><strong>Prompt Management</strong>: Handles prompt engineering and context</li>
+<li><strong>Knowledge Base Connection</strong>: Links to FAR and DoD knowledge</li>
+</ul>
+
+<h3>Document Repository Integration</h3>
+
+<ul>
+<li><strong>Storage Connection</strong>: Links to document storage systems</li>
+<li><strong>Search Interface</strong>: Enables semantic search across repositories</li>
+<li><strong>Version Tracking</strong>: Monitors document versions and changes</li>
+</ul>
+
+<h3>User System Integration</h3>
+
+<ul>
+<li><strong>Authentication</strong>: Connects to user authentication systems</li>
+<li><strong>Role Management</strong>: Handles user roles and permissions</li>
+<li><strong>Notification System</strong>: Manages user alerts and updates</li>
+</ul>
+
+<h3>External Services Integration</h3>
+
+<ul>
+<li><strong>CPARS Access</strong>: Connects to CPARS data sources</li>
+<li><strong>FAR Reference</strong>: Links to FAR documentation and updates</li>
+<li><strong>DoD Standards</strong>: Accesses DoD standards and requirements</li>
+</ul>
+
+<h2>Data Storage Layer</h2>
+
+<h3>Document Database</h3>
+
+<ul>
+<li>Original documents in native formats</li>
+<li>Extracted text and structure</li>
+<li>Document metadata and classification</li>
+<li>Document relationships and dependencies</li>
+</ul>
+
+<h3>Knowledge Base</h3>
+
+<ul>
+<li>FAR requirements and interpretations</li>
+<li>DoD proposal best practices</li>
+<li>Industry standards and terminology</li>
+<li>Evaluation criteria and scoring factors</li>
+</ul>
+
+<h3>User Profiles</h3>
+
+<ul>
+<li>User authentication information</li>
+<li>Role and permission settings</li>
+<li>Preferences and settings</li>
+<li>Usage history and patterns</li>
+</ul>
+
+<h3>Generated Content</h3>
+
+<ul>
+<li>PWS Crosswalk Tables</li>
+<li>Relevancy Grids</li>
+<li>Story Blocks</li>
+<li>Assembled Past-Performance Volumes</li>
+<li>Questions Lists</li>
+</ul>
+
+<h2>Security Architecture</h2>
+
+<h3>Authentication and Authorization</h3>
+
+<ul>
+<li>User authentication system</li>
+<li>Role-based access control</li>
+<li>Permission management</li>
+<li>Audit logging</li>
+</ul>
+
+<h3>Data Protection</h3>
+
+<ul>
+<li>Encryption for data at rest</li>
+<li>Encryption for data in transit</li>
+<li>Data classification and handling</li>
+<li>Data retention and deletion</li>
+</ul>
+
+<h3>Compliance Framework</h3>
+
+<ul>
+<li>DoD security compliance</li>
+<li>FAR compliance</li>
+<li>Privacy compliance</li>
+<li>Audit and reporting</li>
+</ul>
+    </div>
+  </main>
+
+  <footer class="bg-slate-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">ProjectTrack: DoD Contract Proposal Assistant</p>
+          <p class="text-xs text-gray-400 mt-1">© 2025 All rights reserved</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+          <a href="requirements.html" class="text-gray-300 hover:text-white text-sm">Requirements</a>
+          <a href="conclusion.html" class="text-gray-300 hover:text-white text-sm">Conclusion</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

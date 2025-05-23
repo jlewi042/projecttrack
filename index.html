@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectTrack</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .prose h1 {
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+    }
+    .prose h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose h3 {
+      color: #64748b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .prose table th {
+      background-color: #f1f5f9;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table td {
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .prose pre {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      overflow-x: auto;
+    }
+    .prose code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875em;
+    }
+    .prose a {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .prose a:hover {
+      color: #1e3a8a;
+    }
+    .prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose blockquote {
+      border-left: 4px solid #1e40af;
+      padding-left: 1rem;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <nav class="bg-slate-800 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold">ProjectTrack</span>
+          </a>
+        </div>
+        
+        <!-- Desktop menu -->
+        <div class="hidden md:flex md:items-center md:space-x-4">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+          <a href="requirements.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+          <a href="document-types.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+          <a href="workflow.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+          <a href="capabilities.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+          <a href="architecture.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+          <a href="implementation.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+          <a href="conclusion.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-700 focus:outline-none" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+        <a href="requirements.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+        <a href="document-types.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+        <a href="workflow.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+        <a href="capabilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+        <a href="architecture.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+        <a href="implementation.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+        <a href="conclusion.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="prose prose-slate lg:prose-lg max-w-none">
+      <h1>ProjectTrack: DoD Contract Proposal Assistant</h1>
+
+<h2>Overview</h2>
+
+<p>ProjectTrack is a comprehensive solution that assists with writing proposals for winning DoD contracts. It identifies opportunities based on how new Performance Work Statements (PWS) align with past work and past PWS documents.</p>
+
+<p>Using generative AI and access to past performance documents (including proposals, awards, CPAR scores, PWS's, and Technical Instructions), ProjectTrack streamlines the proposal development process and maximizes win probability.</p>
+
+<h2>Key Features</h2>
+
+<ul>
+<li><strong>Document Comparison</strong>: Analyze alignment between new PWS and legacy PWS documents</li>
+<li><strong>Opportunity Scoring</strong>: Evaluate relevance across multiple dimensions</li>
+<li><strong>Proposal Draft Generation</strong>: Create structured content following DoD requirements</li>
+<li><strong>Core Capability Analysis</strong>: Identify strengths and gaps in past performance</li>
+</ul>
+
+<h2>Key Deliverables</h2>
+
+<ol>
+<li><strong>PWS Crosswalk Table</strong> – Two columns (New PWS § ↔ Closest Legacy PWS §) with Green/Yellow/Red relevancy color codes and brief metric evidence</li>
+<li><strong>Relevancy Grid</strong> – One row per reference contract with ratings across relevancy dimensions</li>
+<li><strong>Draft Story Blocks</strong> – Challenge–Action–Result narratives for each major PWS requirement</li>
+<li><strong>Assembled Past-Performance Volume</strong> – Formatted with mirror headings, snapshot tables, and compliance footers</li>
+<li><strong>Questions List</strong> – Identifies missing metrics, CPARS extracts, or client contacts needed to strengthen weak areas</li>
+</ol>
+
+<h2>Benefits</h2>
+
+<ul>
+<li>Reduced proposal development time</li>
+<li>Improved proposal quality and compliance</li>
+<li>Enhanced opportunity identification</li>
+<li>Better utilization of past performance</li>
+<li>Increased win probability</li>
+</ul>
+    </div>
+  </main>
+
+  <footer class="bg-slate-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">ProjectTrack: DoD Contract Proposal Assistant</p>
+          <p class="text-xs text-gray-400 mt-1">© 2025 All rights reserved</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+          <a href="requirements.html" class="text-gray-300 hover:text-white text-sm">Requirements</a>
+          <a href="conclusion.html" class="text-gray-300 hover:text-white text-sm">Conclusion</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

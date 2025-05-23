@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectTrack - Document Types</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .prose h1 {
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+    }
+    .prose h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose h3 {
+      color: #64748b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .prose table th {
+      background-color: #f1f5f9;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table td {
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .prose pre {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      overflow-x: auto;
+    }
+    .prose code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875em;
+    }
+    .prose a {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .prose a:hover {
+      color: #1e3a8a;
+    }
+    .prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose blockquote {
+      border-left: 4px solid #1e40af;
+      padding-left: 1rem;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <nav class="bg-slate-800 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold">ProjectTrack</span>
+          </a>
+        </div>
+        
+        <!-- Desktop menu -->
+        <div class="hidden md:flex md:items-center md:space-x-4">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+          <a href="requirements.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+          <a href="document-types.html" class="px-3 py-2 rounded-md text-sm font-medium bg-slate-900 text-white">Document Types</a>
+          <a href="workflow.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+          <a href="capabilities.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+          <a href="architecture.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+          <a href="implementation.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+          <a href="conclusion.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-700 focus:outline-none" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+        <a href="requirements.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+        <a href="document-types.html" class="block px-3 py-2 rounded-md text-base font-medium bg-slate-900 text-white">Document Types</a>
+        <a href="workflow.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+        <a href="capabilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+        <a href="architecture.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+        <a href="implementation.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+        <a href="conclusion.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="prose prose-slate lg:prose-lg max-w-none">
+      <h1>Document Types Analysis</h1>
+
+<p>ProjectTrack processes and analyzes various types of past performance documents to extract relevant information for proposal development.</p>
+
+<h2>Performance Work Statements (PWS)</h2>
+
+<ul>
+<li><strong>Description</strong>: Detailed descriptions of work requirements for government contracts</li>
+<li><strong>Key Elements</strong>: Scope, objectives, tasks, deliverables, performance standards</li>
+<li><strong>Usage in Agent</strong>: Primary document for comparison between new opportunities and past work</li>
+<li><strong>AI Processing Needs</strong>: 
+<ul>
+<li>Section extraction and categorization</li>
+<li>Requirement identification and classification</li>
+<li>Technical terminology extraction</li>
+<li>Similarity matching between new and legacy PWS sections</li>
+</ul></li>
+</ul>
+
+<h2>Technical Instructions (TI)</h2>
+
+<ul>
+<li><strong>Description</strong>: Specific technical requirements and instructions for contract execution</li>
+<li><strong>Key Elements</strong>: Technical specifications, methodologies, standards, acceptance criteria</li>
+<li><strong>Usage in Agent</strong>: Supporting document for technical capability alignment</li>
+<li><strong>AI Processing Needs</strong>:
+<ul>
+<li>Technical requirement extraction</li>
+<li>Capability matching</li>
+<li>Technical terminology standardization</li>
+</ul></li>
+</ul>
+
+<h2>Past Proposals</h2>
+
+<ul>
+<li><strong>Description</strong>: Previously submitted proposals for government contracts</li>
+<li><strong>Key Elements</strong>: Executive summaries, technical approaches, management approaches, past performance references</li>
+<li><strong>Usage in Agent</strong>: Source for reusable content and successful proposal structures</li>
+<li><strong>AI Processing Needs</strong>:
+<ul>
+<li>Section classification</li>
+<li>Success pattern identification</li>
+<li>Content extraction for story blocks</li>
+<li>Formatting and structure analysis</li>
+</ul></li>
+</ul>
+
+<h2>Contract Awards</h2>
+
+<ul>
+<li><strong>Description</strong>: Documentation of awarded contracts</li>
+<li><strong>Key Elements</strong>: Contract values, periods of performance, awarded scope</li>
+<li><strong>Usage in Agent</strong>: Verification of past performance claims and contract details</li>
+<li><strong>AI Processing Needs</strong>:
+<ul>
+<li>Contract detail extraction (value, dates, scope)</li>
+<li>Agency and customer information extraction</li>
+<li>Contract type classification</li>
+</ul></li>
+</ul>
+
+<h2>CPAR Scores and Evaluations</h2>
+
+<ul>
+<li><strong>Description</strong>: Contractor Performance Assessment Reports providing formal evaluations</li>
+<li><strong>Key Elements</strong>: Performance ratings, evaluator comments, improvement areas, strengths</li>
+<li><strong>Usage in Agent</strong>: Evidence for past performance quality and customer satisfaction</li>
+<li><strong>AI Processing Needs</strong>:
+<ul>
+<li>Rating extraction and normalization</li>
+<li>Positive comment identification</li>
+<li>Strength/weakness classification</li>
+<li>Quote extraction for proposal inclusion</li>
+</ul></li>
+</ul>
+
+<h2>Relevancy Matrices</h2>
+
+<ul>
+<li><strong>Description</strong>: Internal or previous assessments of contract relevance to new opportunities</li>
+<li><strong>Key Elements</strong>: Scope, magnitude, complexity, and customer-type ratings</li>
+<li><strong>Usage in Agent</strong>: Template and historical data for new relevancy assessments</li>
+<li><strong>AI Processing Needs</strong>:
+<ul>
+<li>Rating extraction and standardization</li>
+<li>Dimension mapping (scope, magnitude, complexity, customer-type)</li>
+<li>Historical pattern recognition</li>
+</ul></li>
+</ul>
+
+<h2>PWS Crosswalk Tables</h2>
+
+<ul>
+<li><strong>Description</strong>: Previous comparison tables between new and legacy PWS documents</li>
+<li><strong>Key Elements</strong>: Section mappings, relevancy ratings, evidence snippets</li>
+<li><strong>Usage in Agent</strong>: Templates and historical data for new crosswalk tables</li>
+<li><strong>AI Processing Needs</strong>:
+<ul>
+<li>Table structure recognition</li>
+<li>Color coding interpretation</li>
+<li>Evidence extraction and classification</li>
+</ul></li>
+</ul>
+
+<h2>Story Blocks</h2>
+
+<ul>
+<li><strong>Description</strong>: Narrative descriptions of past performance following Challenge-Action-Result format</li>
+<li><strong>Key Elements</strong>: Challenge descriptions, actions taken, results achieved, tie-back statements</li>
+<li><strong>Usage in Agent</strong>: Templates and content for new story blocks</li>
+<li><strong>AI Processing Needs</strong>:
+<ul>
+<li>Narrative structure recognition</li>
+<li>C-A-R component classification</li>
+<li>Metric extraction</li>
+<li>Length and formatting compliance checking</li>
+</ul></li>
+</ul>
+    </div>
+  </main>
+
+  <footer class="bg-slate-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">ProjectTrack: DoD Contract Proposal Assistant</p>
+          <p class="text-xs text-gray-400 mt-1">© 2025 All rights reserved</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+          <a href="requirements.html" class="text-gray-300 hover:text-white text-sm">Requirements</a>
+          <a href="conclusion.html" class="text-gray-300 hover:text-white text-sm">Conclusion</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectTrack - Requirements</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .prose h1 {
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+    }
+    .prose h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose h3 {
+      color: #64748b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .prose table th {
+      background-color: #f1f5f9;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table td {
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .prose pre {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      overflow-x: auto;
+    }
+    .prose code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875em;
+    }
+    .prose a {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .prose a:hover {
+      color: #1e3a8a;
+    }
+    .prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose blockquote {
+      border-left: 4px solid #1e40af;
+      padding-left: 1rem;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <nav class="bg-slate-800 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold">ProjectTrack</span>
+          </a>
+        </div>
+        
+        <!-- Desktop menu -->
+        <div class="hidden md:flex md:items-center md:space-x-4">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+          <a href="requirements.html" class="px-3 py-2 rounded-md text-sm font-medium bg-slate-900 text-white">Requirements</a>
+          <a href="document-types.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+          <a href="workflow.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+          <a href="capabilities.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+          <a href="architecture.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+          <a href="implementation.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+          <a href="conclusion.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-700 focus:outline-none" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+        <a href="requirements.html" class="block px-3 py-2 rounded-md text-base font-medium bg-slate-900 text-white">Requirements</a>
+        <a href="document-types.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+        <a href="workflow.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+        <a href="capabilities.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Capabilities</a>
+        <a href="architecture.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+        <a href="implementation.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+        <a href="conclusion.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="prose prose-slate lg:prose-lg max-w-none">
+      <h1>Requirements Analysis</h1>
+
+<p>ProjectTrack is designed to meet specific functional, user, integration, and presentation requirements for DoD contract proposals.</p>
+
+<h2>Core Functions</h2>
+
+<ul>
+<li><strong>Document comparison</strong> between new PWS and legacy PWS documents</li>
+<li><strong>Opportunity scoring</strong> based on alignment with past performance</li>
+<li><strong>Proposal draft generation</strong> with specific formatting requirements</li>
+<li><strong>Core capability analysis</strong> to identify strengths and gaps</li>
+<li><strong>PWS Crosswalk Tables</strong> with relevancy color coding</li>
+<li><strong>Relevancy Grids</strong> for each reference contract</li>
+<li><strong>Story Block generation</strong> following Challenge-Action-Result format</li>
+<li><strong>Past-Performance Volume assembly</strong> with proper formatting</li>
+<li><strong>Questions List development</strong> for strengthening weak areas</li>
+</ul>
+
+<h2>Key Deliverables</h2>
+
+<ol>
+<li><strong>PWS Crosswalk Table</strong>
+<ul>
+<li>Two columns (New PWS § ↔ Closest Legacy PWS §)</li>
+<li>Green/Yellow/Red relevancy color codes</li>
+<li>Brief metric evidence for each comparison</li>
+</ul></li>
+<li><strong>Relevancy Grid</strong>
+<ul>
+<li>One row per TSI reference</li>
+<li>Include contract #, agency, POP, value, role, CPARS ratings</li>
+<li>1-to-5 score in each relevancy dimension</li>
+</ul></li>
+<li><strong>Draft Story Blocks</strong>
+<ul>
+<li>At least one per new PWS major requirement</li>
+<li>Follow Challenge-Action-Result (+ Tie-Back) format</li>
+<li>Maximum 250 words per story block</li>
+</ul></li>
+<li><strong>Assembled Past-Performance Volume</strong>
+<ul>
+<li>Formatted with mirror headings</li>
+<li>Include snapshot tables (≤ ½ page)</li>
+<li>Include story blocks</li>
+<li>Compliance footers on every page</li>
+</ul></li>
+<li><strong>Questions List</strong>
+<ul>
+<li>Identify missing metrics</li>
+<li>Note needed CPARS extracts</li>
+<li>List client contacts needed to strengthen weak areas</li>
+</ul></li>
+<li><strong>Lessons-Learned Summary</strong>
+<ul>
+<li>1-page summary for future volumes</li>
+<li>Created after all deliverables are approved</li>
+</ul></li>
+</ol>
+
+<h2>User Roles</h2>
+
+<ul>
+<li><strong>Proposal managers</strong> - Full access to all features and deliverables</li>
+<li><strong>Growth (BD) Team</strong> - Access to opportunity assessment features</li>
+<li><strong>Proposal writers</strong> - Access to generated content and story blocks</li>
+</ul>
+
+<h2>Integration Requirements</h2>
+
+<ul>
+<li>FAR 15.305(a)(2) past-performance policy</li>
+<li>CPARS best-practice benchmarks</li>
+<li>Relevancy Matrix methodology (Scope, Magnitude, Complexity, Customer-Type)</li>
+<li>PWS Crosswalk technique with Green/Yellow/Red coding</li>
+<li>Mirror Method architecture for proposal structure</li>
+<li>Metric Narrative rule for beneficiary and improvement delta</li>
+<li>Acknowledge-Bridge-Strengthen gap-mitigation pattern</li>
+<li>508/readability compliance rules</li>
+</ul>
+
+<h2>Presentation Requirements</h2>
+
+<h3>Tone & Style</h3>
+<ul>
+<li>Formal, active voice with varied sentence length</li>
+<li>No filler phrases such as "It should be noted"</li>
+<li>Write for a time-starved evaluator and risk-averse acquisition lawyer</li>
+<li>Every paragraph must reduce perceived performance risk</li>
+</ul>
+
+<h3>Formatting Requirements</h3>
+<ul>
+<li>Snapshot tables ≤ ½ page</li>
+<li>Story blocks ≤ 250 words</li>
+<li>Number every page footer "TSI Past Perf | Ref # X | Page Y of Z"</li>
+<li>≤ 12-point font unless RFP states otherwise</li>
+<li>Include alt-text for accessibility compliance</li>
+</ul>
+
+<h2>Process Rules</h2>
+
+<ul>
+<li>Ask clarifying questions only if information gaps block the next deliverable</li>
+<li>Cite contract numbers, CPARS quotes, or deliverable IDs whenever possible</li>
+<li>If a legacy PWS section lacks direct match, propose a teammate or transferable capability and mark Yellow</li>
+<li>When all deliverables are approved, create a 1-page Lessons-Learned summary</li>
+</ul>
+    </div>
+  </main>
+
+  <footer class="bg-slate-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">ProjectTrack: DoD Contract Proposal Assistant</p>
+          <p class="text-xs text-gray-400 mt-1">© 2025 All rights reserved</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+          <a href="requirements.html" class="text-gray-300 hover:text-white text-sm">Requirements</a>
+          <a href="conclusion.html" class="text-gray-300 hover:text-white text-sm">Conclusion</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

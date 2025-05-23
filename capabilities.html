@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectTrack - Capabilities</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .prose h1 {
+      color: #1e40af;
+      margin-bottom: 1.5rem;
+    }
+    .prose h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .prose h3 {
+      color: #64748b;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .prose table th {
+      background-color: #f1f5f9;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table td {
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+    .prose table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .prose pre {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      overflow-x: auto;
+    }
+    .prose code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875em;
+    }
+    .prose a {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+    .prose a:hover {
+      color: #1e3a8a;
+    }
+    .prose ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .prose blockquote {
+      border-left: 4px solid #1e40af;
+      padding-left: 1rem;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <nav class="bg-slate-800 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold">ProjectTrack</span>
+          </a>
+        </div>
+        
+        <!-- Desktop menu -->
+        <div class="hidden md:flex md:items-center md:space-x-4">
+          <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+          <a href="requirements.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+          <a href="document-types.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+          <a href="workflow.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+          <a href="capabilities.html" class="px-3 py-2 rounded-md text-sm font-medium bg-slate-900 text-white">Capabilities</a>
+          <a href="architecture.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+          <a href="implementation.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+          <a href="conclusion.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-700 focus:outline-none" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Home</a>
+        <a href="requirements.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Requirements</a>
+        <a href="document-types.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Document Types</a>
+        <a href="workflow.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Workflow</a>
+        <a href="capabilities.html" class="block px-3 py-2 rounded-md text-base font-medium bg-slate-900 text-white">Capabilities</a>
+        <a href="architecture.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Architecture</a>
+        <a href="implementation.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Implementation</a>
+        <a href="conclusion.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="prose prose-slate lg:prose-lg max-w-none">
+      <h1>Data Ingestion and AI Capabilities</h1>
+
+<p>ProjectTrack requires robust data ingestion methods and advanced AI capabilities to process documents and generate content.</p>
+
+<h2>Data Ingestion Methods</h2>
+
+<h3>Document Format Support</h3>
+
+<ul>
+<li><strong>PDF Document Processing</strong>: Extract text and images while maintaining structure</li>
+<li><strong>Microsoft Office Document Processing</strong>: Process Word, Excel, and PowerPoint files</li>
+<li><strong>Plain Text and Markdown</strong>: Standard text processing with preservation of structure</li>
+</ul>
+
+<h3>Document Ingestion Workflows</h3>
+
+<ul>
+<li><strong>Batch Upload Processing</strong>: Bulk import of document libraries with metadata extraction</li>
+<li><strong>Individual Document Processing</strong>: User-guided document submission with metadata tagging</li>
+<li><strong>Continuous Repository Monitoring</strong>: Identify and process new documents added to repositories</li>
+</ul>
+
+<h3>Metadata Extraction</h3>
+
+<ul>
+<li><strong>Document Properties</strong>: Extract title, author, creation date, modification date</li>
+<li><strong>Contract-Specific Metadata</strong>: Extract contract numbers, agency information, periods of performance</li>
+<li><strong>Classification Markers</strong>: Identify security classifications and handling requirements</li>
+</ul>
+
+<h3>Structure Recognition</h3>
+
+<ul>
+<li><strong>Document Hierarchy</strong>: Identify document sections and subsections</li>
+<li><strong>Table Extraction</strong>: Maintain rows, columns, and cell relationships</li>
+<li><strong>List Recognition</strong>: Preserve bulleted and numbered lists with hierarchy</li>
+</ul>
+
+<h3>Content Classification</h3>
+
+<ul>
+<li><strong>Requirement Identification</strong>: Identify shall/will/must statements</li>
+<li><strong>Technical Terminology</strong>: Extract domain-specific terms and acronyms</li>
+<li><strong>Performance Evidence</strong>: Identify quantitative performance metrics and outcomes</li>
+</ul>
+
+<h2>AI Capabilities</h2>
+
+<h3>Natural Language Processing</h3>
+
+<ul>
+<li><strong>Document Understanding</strong>: Extract meaning and context from document text</li>
+<li><strong>Requirement Analysis</strong>: Categorize requirements by type and importance</li>
+<li><strong>Sentiment and Tone Analysis</strong>: Identify evaluation language and risk statements</li>
+</ul>
+
+<h3>Semantic Matching</h3>
+
+<ul>
+<li><strong>PWS Comparison</strong>: Match sections between new and legacy PWS documents</li>
+<li><strong>Capability Matching</strong>: Match organizational capabilities to requirements</li>
+<li><strong>Gap Identification</strong>: Identify requirements without matching past performance</li>
+</ul>
+
+<h3>Content Generation</h3>
+
+<ul>
+<li><strong>Narrative Generation</strong>: Generate Challenge-Action-Result narratives</li>
+<li><strong>Table Generation</strong>: Create structured comparison tables and relevancy grids</li>
+<li><strong>Document Assembly</strong>: Structure document sections according to requirements</li>
+</ul>
+
+<h3>Relevancy Assessment</h3>
+
+<ul>
+<li><strong>Scoring Algorithms</strong>: Evaluate relevance across multiple dimensions</li>
+<li><strong>Evidence Extraction</strong>: Identify evidence supporting relevancy claims</li>
+<li><strong>Gap Mitigation</strong>: Develop strategies to address identified gaps</li>
+</ul>
+
+<h3>Quality Assurance</h3>
+
+<ul>
+<li><strong>Compliance Checking</strong>: Verify adherence to formatting requirements</li>
+<li><strong>Style and Tone Verification</strong>: Ensure active voice and appropriate style</li>
+<li><strong>Risk Reduction Focus</strong>: Verify language builds confidence in capabilities</li>
+</ul>
+
+<h2>Microsoft Copilot Studio Integration</h2>
+
+<h3>Custom GPT Components</h3>
+
+<ul>
+<li><strong>Specialized Models</strong>: Fine-tuned for government document understanding</li>
+<li><strong>Prompt Engineering</strong>: Maintain document context across interactions</li>
+<li><strong>Knowledge Base Integration</strong>: Incorporate FAR guidelines and proposal best practices</li>
+</ul>
+
+<h3>Copilot Studio Plugins</h3>
+
+<ul>
+<li><strong>Document Processing Plugins</strong>: Specialized for government document extraction</li>
+<li><strong>Content Generation Plugins</strong>: Create formatted narratives and tables</li>
+<li><strong>Quality Assurance Plugins</strong>: Verify compliance with requirements</li>
+</ul>
+
+<h3>API Integrations</h3>
+
+<ul>
+<li><strong>Document Repository APIs</strong>: Connect to document storage systems</li>
+<li><strong>Collaboration APIs</strong>: Handle user roles and feedback collection</li>
+<li><strong>Deployment APIs</strong>: Manage environment configuration and monitoring</li>
+</ul>
+    </div>
+  </main>
+
+  <footer class="bg-slate-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-sm">ProjectTrack: DoD Contract Proposal Assistant</p>
+          <p class="text-xs text-gray-400 mt-1">© 2025 All rights reserved</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="index.html" class="text-gray-300 hover:text-white text-sm">Home</a>
+          <a href="requirements.html" class="text-gray-300 hover:text-white text-sm">Requirements</a>
+          <a href="conclusion.html" class="text-gray-300 hover:text-white text-sm">Conclusion</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
